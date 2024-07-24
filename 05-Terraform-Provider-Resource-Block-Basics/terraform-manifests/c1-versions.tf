@@ -1,5 +1,23 @@
 # Terraform Block
 terraform {
+   required_version = ">= 0.14.0"
+   required_providers {
+    azurerm = {
+      source = "hashicorp/azurerm"
+      version = "3.113.0"
+    }
+   }
+}
+
+# Provider Block
+provider "azurerm" { # Name of provider should refer to local provider name
+  features {
+    
+  }
+}
+
+/*
+terraform {
   required_version = ">= 1.0.0"
   required_providers {
     azurerm = {
@@ -16,6 +34,7 @@ terraform {
 provider "azurerm" {
 features {}
 }
+*/
 
 
 /*

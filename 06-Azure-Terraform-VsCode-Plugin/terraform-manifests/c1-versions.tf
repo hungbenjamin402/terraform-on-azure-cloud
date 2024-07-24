@@ -9,8 +9,21 @@ terraform {
   }
 }
 
-# Provider Block
+# Provider-1 Block for EastUS (Default Provider)
 provider "azurerm" {
-features {}
+  features {
+    virtual_machine {
+      delete_os_disk_on_deletion = false  
+    }
+  }
 }
-#
+
+# Provider-2 Block for WestUS
+provider "azurerm" {
+  features {
+    virtual_machine {
+      delete_os_disk_on_deletion = false  
+    }
+  }
+  alias  = "provider2-WestUS"
+}
